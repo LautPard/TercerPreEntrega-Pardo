@@ -1,0 +1,24 @@
+{% extends 'PreEntrega/base.html' %}
+
+{%block titulo%} Listado de Personas {%endblock%}
+
+{% block listado %}
+
+<form>
+    <p>
+        <label for="id_tarea">Tarea</label>
+        <input type="text" name="tarea" maxlength="100" required="" id="tarea">
+
+    </p>
+    <p>
+        <input type="submit" value="Buscar">
+    </p>
+</form>
+<ul>
+    {% for tarea in tareas %}
+        <li>{{ tarea.tarea }} - {{ tarea.lugar }} </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block title %} Tareas {% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'PreEntrega/base.html' %}
+{% block title %} Materias {% endblock %}
+{%block titulo%} Listas de Materias por año {%endblock%}
+
+{% block listado %}
+
+<form>
+    <p>
+        <label for="id_materia">Materia</label>
+        <input type="text" name="materia" maxlength="100" required="" id="materia">
+
+    </p>
+    <p>
+        <input type="submit" value="Buscar">
+    </p>
+</form>
+
+<ul>
+    {% for materia in materias %}
+         <li>{{materia}} </li>
+     {% endfor %}
+</ul>
+{% endblock %}
+

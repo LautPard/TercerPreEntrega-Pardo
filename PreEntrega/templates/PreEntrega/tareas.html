@@ -1,0 +1,20 @@
+{% extends 'PreEntrega/base.html' %}
+
+{%block titulo%} Listado de Tareas {%endblock%}
+
+{% block listado %}
+
+<form action="{% url 'tareas-agregar' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Agregar">
+
+</form>
+    <ul>
+        {% for tarea in tareas %}
+            <li>{{ tarea.tarea }} - {{ tarea.lugar }} </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block title %} Tareas {% endblock %}

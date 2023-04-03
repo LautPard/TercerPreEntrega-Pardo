@@ -1,0 +1,20 @@
+{% extends 'PreEntrega/base.html' %}
+
+{%block titulo%} Listas de Materias por año {%endblock%}
+
+{% block listado %}
+
+<form action="{% url 'materias-cargar' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Agregar">
+
+</form>
+<ul>
+    {% for materia in materias %}
+         <li>{{materia}} </li>
+     {% endfor %}
+</ul>
+{% endblock %}
+
+{% block title %} Materias {% endblock %}
